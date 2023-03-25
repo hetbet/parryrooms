@@ -4,6 +4,7 @@ body {
 
     background-image: url("/assets/background.png");
     background-color: #1d1d1d;
+    background-size: cover;
 
     font-family: "JetBrains Mono";
     color: white;

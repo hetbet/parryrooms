@@ -17,6 +17,10 @@ server.get("/register", (req, res): void => {
 
 });
 
+server.get("/about", (req, res): void => {
+    res.sendFile(path.resolve("../client/about/index.html"));
+});
+
 // listen pls bruh
 server.listen(10003, () => {
     console.log("Server running on port 10003.");

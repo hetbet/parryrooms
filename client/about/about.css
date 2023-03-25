@@ -1,0 +1,18 @@
+h2 {
+    margin-bottom: 5px;
+
+    text-decoration: underline;
+}
+
+p {
+    display: inline-block;
+    width: 60%;
+}
+
+b {
+    font-size: 18px;
+}
+
+#matthew {
+    font-size: 12px;
+}
