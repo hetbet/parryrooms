@@ -1,15 +1,15 @@
 /**
  * @type {HTMLInputElement}
  */
-const passwordBox = $("#passwordBox");
+const passwordBox = document.querySelector("#passwordBox");
 /**
  * @type {HTMLProgressElement}
  */
-const passwordStrengthBar = $("progress")
+const passwordStrengthBar = document.querySelector("progress")
 /**
  * @type {HTMLSpanElement}
  */
-const passwordStrengthDescription = $("#strengthDescription")
+const passwordStrengthDescription = document.querySelector("#strengthDescription")
 
 function listAppearances(list, target) {
     let appearances = 0;
