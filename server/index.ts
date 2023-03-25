@@ -14,7 +14,7 @@ server.get("/", (req, res): void => {
 });
 
 server.get("/register", (req, res): void => {
-
+    res.sendFile(path.resolve("../client/register/index.html"));
 });
 
 server.get("/about", (req, res): void => {

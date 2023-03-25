@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Parryrooms | Register</title>
+
+    <link rel="stylesheet" href="/client/index.css"/>
+    <link rel="stylesheet" href="/client/account.css"/>
+    <link rel="stylesheet" href="/client/register/register.css"/>
+</head>
+<body>
+    
+    <h1 id="title">Parryrooms</h1>
+    <br>
+    <div id="formArea">
+        <h2>Register</h2>
+
+        <input id="usernameBox" type="text" placeholder="Username...">
+        <br>
+
+        <input id="passwordBox" style="margin-bottom: 0px;" type="password" placeholder="Password...">
+        <br>
+        <div id="passwordStrength">
+            <progress value=0 max=24></progress>
+            <span id="strengthDescription">Weak</span>
+        </div>
+
+        <input id="confirmPasswordBox" type="password" placeholder="Confirm Password...">
+        <br>
+
+        <button>Register</button>
+        <br>
+
+        <div id="accountMessage">
+            Already have an account?
+            <a href="/">Login</a>
+        </div>
+    </div>
+
+    <footer>
+        by
+        <a href="/about">wintrcorp</a>
+    </footer>
+
+    <script src="/client/query.js"></script>
+    <script src="/client/register/password.js"></script>
+
+</body>
+</html>
