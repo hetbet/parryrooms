@@ -10,6 +10,10 @@ const confirmPasswordBox = document.querySelector("#confirmPasswordBox");
  * @type {HTMLButtonElement}
  */
 const registerButton = document.querySelector("button");
+/**
+ * @type {HTMLDivElement}
+ */
+const statusMessage = document.querySelector("#statusMessage");
 
 registerButton.addEventListener("click", () => {
 
@@ -23,9 +27,11 @@ registerButton.addEventListener("click", () => {
             "password": passwordBox.value,
             "confirmPassword": confirmPasswordBox.value
         })
-    }).then(res => {
+    }).then(async res => {
         if (res.ok) {
             alert("woo");
+        } else {
+            statusMessage.innerHTML = await res.text();
         }
     }).catch(() => {
         alert("Unknown network error.");

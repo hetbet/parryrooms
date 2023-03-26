@@ -1,2 +1,4 @@
 server/node_modules
-server/*.js
+server/src/*.js
+server/db.json
+*.ps1
