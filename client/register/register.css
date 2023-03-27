@@ -13,3 +13,13 @@ progress {
 
     font-size: 14px;
 }
+
+#captchaImage {
+    border: 2px solid #414141;
+}
+
+#captchaBox {
+    width: 70px;
+    padding: 5px;
+    text-align: center;
+}

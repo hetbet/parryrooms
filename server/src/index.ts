@@ -53,12 +53,35 @@ server.get("/about", (req, res): void => {
 });
 
 // api routes
+
+// get request here to get a captcha and store a generated token
 server.get("/api/captcha", (req, res): void => {
     let captcha: Captcha = generateCaptcha();
 
-    database.query("INSERT")
+    database.query("INSERT INTO captchas (token, answer, image) VALUES(?, ?, ?);", [
+        captcha.token,
+        captcha.answer,
+        captcha.image
+    ]);
 
-    res.send(JSON.stringify(captcha));
+    res.send(JSON.stringify({
+        "image": captcha.image,
+        "token": captcha.token
+    }));
+});
+
+// post request here if you want an image for an existing captcha token
+server.post("/api/captcha", (req, res): void => {
+    database.query("SELECT image FROM captchas WHERE token = ?", [
+        req.body.token
+    ], (err, results: any[]): void => {
+        if (results.length == 0) {
+            res.status(404);
+            res.send("Invalid or unknown CAPTCHA token.");
+        } else {
+            res.send(results[0].image);
+        }
+    });
 });
 
 server.post("/api/register", async (req, res): Promise<void> => {
@@ -77,12 +100,10 @@ server.post("/api/register", async (req, res): Promise<void> => {
     }
 
     let hashedPassword: string = await bcrypt.hash(req.body.password, 10);
-    database.query(`INSERT INTO credentials (username, password) VALUES(?, ?);`, [
+    database.query("INSERT INTO credentials (username, password) VALUES(?, ?);", [
         req.body.username,
         hashedPassword
     ]);
-
-    
 });
 
 // listen pls bruh

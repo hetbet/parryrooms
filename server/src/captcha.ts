@@ -5,7 +5,8 @@ import { randint } from "./util";
 
 export interface Captcha {
     image: string,
-    token: string
+    token: string,
+    answer: string
 }
 
 export function generateCaptcha(): Captcha {
@@ -35,6 +36,7 @@ export function generateCaptcha(): Captcha {
 
     return {
         "image": canvas.toDataURL(),
-        "token": uuidv4()
+        "token": uuidv4(),
+        "answer": captchaAnswer
     };
 }

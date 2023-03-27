@@ -14,18 +14,24 @@
     <div id="formArea">
         <h2>Register</h2>
 
-        <input id="usernameBox" type="text" placeholder="Username...">
+        <input class="bigFormBox" id="usernameBox" type="text" placeholder="Username...">
         <br>
 
-        <input id="passwordBox" style="margin-bottom: 0px;" type="password" placeholder="Password...">
+        <input class="bigFormBox" id="passwordBox" style="margin-bottom: 0px;" type="password" placeholder="Password...">
         <br>
         <div id="passwordStrength">
             <progress value=0 max=24></progress>
             <span id="strengthDescription">Weak</span>
         </div>
 
-        <input id="confirmPasswordBox" type="password" placeholder="Confirm Password...">
+        <input class="bigFormBox" id="confirmPasswordBox" type="password" placeholder="Confirm Password...">
         <br>
+
+        <div style="margin-top: 5px;">
+            <img id="captchaImage" alt="CAPTCHA loading..."/>
+            <br>
+            <input id="captchaBox" type="text" placeholder="Number"/>
+        </div>
 
         <div id="statusMessage"></div>
 
@@ -43,6 +49,7 @@
         <a href="/about">wintrcorp</a>
     </footer>
 
+    <script src="/client/captcha.js"></script>
     <script src="/client/register/password.js"></script>
     <script src="/client/register/register.js"></script>
 
